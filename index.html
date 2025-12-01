@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الخبراء - تجربة غريبة</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; background-color:#fefefe; overflow-x:hidden;}
+#logo { font-family: 'Rakkas', serif !important; cursor:pointer;}
+.transition-all { transition: all 0.3s ease-in-out; }
+.hero-bg { clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%); }
+.particle { position: absolute; width:10px;height:10px;background:rgba(255,200,0,0.5); border-radius:50%; animation: float 6s linear infinite; }
+@keyframes float {
+  0% { transform: translateY(0) translateX(0);}
+  50% { transform: translateY(-50px) translateX(50px);}
+  100% { transform: translateY(0) translateX(0);}
+}
+</style>
+</head>
+<body class="text-gray-800">
+
+<!-- Header -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="container mx-auto flex justify-between items-center px-4 py-4">
+    <div id="logo" class="text-3xl font-bold text-indigo-700">الخبراء</div>
+    <nav class="hidden md:flex space-x-reverse space-x-8 text-lg" id="menu">
+      <a href="#home" class="hover:text-blue-600 transition-all" data-key="nav-home">الرئيسية</a>
+      <a href="#products" class="hover:text-blue-600 transition-all" data-key="nav-products">منتجاتنا</a>
+      <a href="#about" class="hover:text-blue-600 transition-all" data-key="nav-about">من نحن</a>
+      <a href="#contact" class="hover:text-blue-600 transition-all" data-key="nav-contact">تواصل</a>
+      <button id="lang-btn" class="ml-4 px-3 py-1 border rounded text-sm bg-indigo-100 hover:bg-indigo-200 transition-all">EN</button>
+    </nav>
+    <div class="md:hidden flex items-center">
+      <button id="hamburger" class="text-2xl">&#9776;</button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg px-4 py-4 space-y-2">
+      <a href="#home" class="block" data-key="nav-home">الرئيسية</a>
+      <a href="#products" class="block" data-key="nav-products">منتجاتنا</a>
+      <a href="#about" class="block" data-key="nav-about">من نحن</a>
+      <a href="#contact" class="block" data-key="nav-contact">تواصل</a>
+      <button id="lang-btn-mobile" class="w-full px-3 py-1 border rounded text-sm bg-indigo-100 hover:bg-indigo-200 transition-all">EN</button>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<section id="home" class="relative hero-bg bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-400 py-32 overflow-hidden">
+  <!-- Particles -->
+  <div id="particles-container"></div>
+  
+  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10">
+    <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+      <h1 class="text-6xl md:text-8xl font-extrabold mb-4 rakkas" data-key="hero-title">نكهة الأصالة في كل قطعة</h1>
+      <p class="text-xl md:text-2xl mb-6" data-key="hero-sub">الخبراء يقدم أجود أنواع النان الرقيق والمخبوز يوميًا بشغف وإتقان.</p>
+      <a href="#contact" class="bg-indigo-700 hover:bg-indigo-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all rakkas" data-key="hero-btn">تواصل معنا</a>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <img src="images/tacos.gif" alt="Thin Bread" class="rounded-xl shadow-2xl w-full max-w-md">
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section id="products" class="py-20 bg-gradient-to-t from-white via-yellow-50 to-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-6 text-indigo-700" data-key="products-title">منتجاتنا المميزة</h2>
+    <div class="flex overflow-x-auto space-x-6 py-6">
+      <div class="min-w-[250px] bg-purple-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all text-center">
+        <img src="images/hero1.png" alt="Saj Bread" class="mx-auto mb-4 rounded-lg">
+        <h3 class="text-2xl font-semibold mb-2" data-key="prod1-title">خبز الصاج الرفيع</h3>
+        <p class="text-gray-600" data-key="prod1-desc">رقيق ومثالي للشاورما والجبن.</p>
+      </div>
+      <div class="min-w-[250px] bg-pink-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all text-center">
+        <img src="images/hero2.png" alt="Tanoor Bread" class="mx-auto mb-4 rounded-lg">
+        <h3 class="text-2xl font-semibold mb-2" data-key="prod2-title">خبز التنور الأصيل</h3>
+        <p class="text-gray-600" data-key="prod2-desc">خبز دائري بنكهة مدخنة رائعة.</p>
+      </div>
+      <div class="min-w-[250px] bg-yellow-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all text-center">
+        <img src="images/hero1.png" alt="Shrak Bread" class="mx-auto mb-4 rounded-lg">
+        <h3 class="text-2xl font-semibold mb-2" data-key="prod3-title">خبز الشراك الطازج</h3>
+        <p class="text-gray-600" data-key="prod3-desc">رقيق ويذوب في الفم، مثالي مع العسل.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-20 bg-gradient-to-r from-purple-200 via-pink-100 to-yellow-100">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-6 text-indigo-700" data-key="about-title">سر جودتنا</h2>
+    <p class="text-gray-600 mb-12 max-w-2xl mx-auto" data-key="about-desc">نستخدم أفضل المكونات والتقنيات لضمان أعلى طعم ونضارة.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all">
+        <div class="text-5xl text-indigo-500 mb-4">&#x1F33E;</div>
+        <h4 class="text-2xl font-semibold" data-key="about1-title">مكونات طبيعية</h4>
+        <p class="text-gray-600" data-key="about1-desc">أفضل القمح والمياه النقية لخبز صحي.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all">
+        <div class="text-5xl text-indigo-500 mb-4">&#x23F1;&#xFE0F;</div>
+        <h4 class="text-2xl font-semibold" data-key="about2-title">نضارة يومية</h4>
+        <p class="text-gray-600" data-key="about2-desc">يتم الخبز والتوصيل في نفس اليوم.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all">
+        <div class="text-5xl text-indigo-500 mb-4">&#x1F373;</div>
+        <h4 class="text-2xl font-semibold" data-key="about3-title">طرق تقليدية</h4>
+        <p class="text-gray-600" data-key="about3-desc">نحافظ على وصفات أصيلة تذكرك بالماضي.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 bg-white">
+  <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div class="p-8 bg-yellow-50 rounded-2xl shadow-2xl">
+      <h3 class="text-2xl font-semibold text-center mb-6" data-key="contact-title">تواصل معنا</h3>
+      <form action="#" method="POST" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium" data-key="contact-name">الاسم الكامل</label>
+          <input type="text" class="mt-1 block w-full border rounded-md p-3 focus:ring-blue-500 focus:border-blue-500" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium" data-key="contact-email">البريد / الهاتف</label>
+          <input type="text" class="mt-1 block w-full border rounded-md p-3 focus:ring-blue-500 focus:border-blue-500" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium" data-key="contact-msg">رسالتك</label>
+          <textarea class="mt-1 block w-full border rounded-md p-3 focus:ring-blue-500 focus:border-blue-500" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="w-full bg-indigo-700 hover:bg-indigo-900 text-white font-semibold py-3 px-4 rounded-lg transition-all shadow-md rakkas" data-key="contact-btn">تواصل معنا</button>
+      </form>
+    </div>
+    <div class="rounded-2xl overflow-hidden shadow-2xl">
+      <h3 class="text-2xl font-semibold text-center py-4 bg-indigo-700 text-white" data-key="map-title">موقع المخبز</h3>
+      <div class="w-full bg-gray-200 flex items-center justify-center p-8 h-80">
+        <p class="text-gray-600 font-semibold">**(مكان الخريطة هنا)**</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-gray-900 text-white py-6 mt-12">
+  <div class="container mx-auto px-6 text-center">
+    <p class="text-sm">&copy; <span class="rakkas">الخبراء</span> 2024. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<script>
+// Logo reload
+document.getElementById('logo').addEventListener('click',()=>location.reload());
+
+// Hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click',()=>mobileMenu.classList.toggle('hidden'));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+    anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        const target=document.querySelector(this.getAttribute('href'));
+        if(target){
+            target.scrollIntoView({behavior:'smooth'});
+            if(!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+        }
+    });
+});
+
+// Language toggle
+const langBtn = document.getElementById('lang-btn');
+const langBtnMobile = document.getElementById('lang-btn-mobile');
+let isArabic = true;
+const translations = {
+"nav-home":["الرئيسية","Home"],
+"nav-products":["منتجاتنا","Products"],
+"nav-about":["من نحن","About Us"],
+"nav-contact":["تواصل","Contact"],
+"hero-title":["نكهة الأصالة في كل قطعة","Taste of Tradition in Every Slice"],
+"hero-sub":["الخبراء يقدم أجود أنواع النان الرقيق والمخبوز يوميًا بشغف وإتقان.","Al-Khubaraa offers the finest thin bread baked daily with passion."],
+"hero-btn":["تواصل معنا","Contact Us"],
+"products-title":["منتجاتنا المميزة","Our Featured Products"],
+"prod1-title":["خبز الصاج الرفيع","Thin Saj Bread"],
+"prod1-desc":["رقيق ومثالي للشاورما والجبن.","Thin and perfect for shawarma and cheese."],
+"prod2-title":["خبز التنور الأصيل","Authentic Tanoor Bread"],
+"prod2-desc":["خبز دائري بنكهة مدخنة رائعة.","Round bread with a unique smoky flavor."],
+"prod3-title":["خبز الشراك الطازج","Fresh Shrak Bread"],
+"prod3-desc":["رقيق ويذوب في الفم، مثالي مع العسل.","Thin and melts in the mouth, perfect with honey."],
+"about-title":["سر جودتنا","Our Quality Secret"],
+"about-desc":["نستخدم أفضل المكونات والتقنيات لضمان أعلى طعم ونضارة.","We use the finest ingredients and techniques for top quality."],
+"about1-title":["مكونات طبيعية","Natural Ingredients"],
+"about1-desc":["أفضل القمح والمياه النقية لخبز صحي.","Best wheat and pure water for healthy bread."],
+"about2-title":["نضارة يومية","Daily Freshness"],
+"about2-desc":["يتم الخبز والتوصيل في نفس اليوم.","Baked and delivered the same day."],
+"about3-title":["طرق تقليدية","Traditional Baking"],
+"about3-desc":["نحافظ على وصفات أصيلة تذكرك بالماضي.","Keeping traditional recipes for authentic taste."],
+"contact-title":["تواصل معنا","Contact Us"],
+"contact-name":["الاسم الكامل","Full Name"],
+"contact-email":["البريد / الهاتف","Email / Phone"],
+"contact-msg":["رسالتك","Your Message"],
+"contact-btn":["تواصل معنا","Contact Us"],
+"map-title":["موقع المخبز","Bakery Location"]
+};
+function toggleLang(){
+    isArabic=!isArabic;
+    document.documentElement.dir=isArabic?'rtl':'ltr';
+    langBtn.textContent=isArabic?'EN':'AR';
+    langBtnMobile.textContent=isArabic?'EN':'AR';
+    document.querySelectorAll('[data-key]').forEach(el=>{
+        const key=el.getAttribute('data-key');
+        el.textContent=translations[key][isArabic?0:1];
+    });
+}
+langBtn.addEventListener('click',toggleLang);
+langBtnMobile.addEventListener('click',toggleLang);
+
+// Particles
+const container=document.getElementById('particles-container');
+for(let i=0;i<20;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    p.style.left=Math.random()*100+'%';
+    p.style.top=Math.random()*100+'%';
+    p.style.width=(5+Math.random()*10)+'px';
+    p.style.height=p.style.width;
+    container.appendChild(p);
+}
+</script>
+
+</body>
+</html>
